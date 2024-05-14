@@ -3,7 +3,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest --forceExit --detectOpenHandles"
   },
   "dependencies": {
     "jest": "^29.7.0",
