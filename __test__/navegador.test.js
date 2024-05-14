@@ -8,10 +8,15 @@ describe('Mi primer test en puppeteer', () => {
     });
     const page = await browser.newPage();
     await page.goto('https://www.yahoo.com/');
-    await new Promise((resolve) => setTimeout(resolve, 2000));
+    // await new Promise((resolve) => setTimeout(resolve, 1000));
     await page.waitForSelector('img');
-
+    //recargar la pagina
     await page.reload();
+    await page.waitForSelector('img');
+    //navegar a otro sitio
+    await page.goto('https://www.platzi.com/');
+    await page.waitForSelector('body > main > header > div > figure > svg > g > path:nth-child(2)');
+
 
     await browser.close();
   }, 60000); // Aumenta el tiempo de espera a 60 segundos
