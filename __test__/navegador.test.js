@@ -8,7 +8,6 @@ describe('Mi primer test en puppeteer', () => {
     });
     const page = await browser.newPage();
     await page.goto('https://www.github.com/');
-    // await new Promise((resolve) => setTimeout(resolve, 1000));
     await page.waitForSelector('img');
     //recargar la pagina
     await page.reload();
@@ -20,6 +19,13 @@ describe('Mi primer test en puppeteer', () => {
     await page.goBack();
     //navegar hacia adelante
     await page.goForward();
+    
+    //abrir nueva ventana
+    const page2 = await browser.newPage();
+    await page2.goto('https://www.google.com/')
+    
+    
+    await new Promise((resolve) => setTimeout(resolve, 2000));
 
     await browser.close();
   }, 120000); // Aumenta el tiempo de espera a 2 minutos
