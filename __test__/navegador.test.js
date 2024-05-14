@@ -7,7 +7,7 @@ describe('Mi primer test en puppeteer', () => {
         defaultViewport: null, // maximiza el viewport de la página al tamaño de la ventana que se ha pasado por args
     });
     const page = await browser.newPage();
-    await page.goto('https://www.yahoo.com/');
+    await page.goto('https://www.github.com/');
     // await new Promise((resolve) => setTimeout(resolve, 1000));
     await page.waitForSelector('img');
     //recargar la pagina
@@ -16,8 +16,11 @@ describe('Mi primer test en puppeteer', () => {
     //navegar a otro sitio
     await page.goto('https://www.platzi.com/');
     await page.waitForSelector('body > main > header > div > figure > svg > g > path:nth-child(2)');
-
+    //navegar hacia atras
+    await page.goBack();
+    //navegar hacia adelante
+    await page.goForward();
 
     await browser.close();
-  }, 60000); // Aumenta el tiempo de espera a 60 segundos
+  }, 120000); // Aumenta el tiempo de espera a 2 minutos
 });
